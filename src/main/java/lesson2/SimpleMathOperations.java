@@ -11,23 +11,23 @@ public class SimpleMathOperations {
         int arg3 = 0;
 
         long resultOfAddition = add(arg1, arg2);
-        System.out.printf("%s плюс %s равно %s\n", arg1, arg2, resultOfAddition);
+        System.out.printf("%d плюс %d равно %d\n", arg1, arg2, resultOfAddition);
         long resultOfSubtraction = subtract(arg1, arg2);
-        System.out.printf("%s минус %s равно %s\n", arg1, arg2, resultOfSubtraction);
+        System.out.printf("%d минус %d равно %d\n", arg1, arg2, resultOfSubtraction);
         long resultOfMultiplication = multiply(arg1, arg2);
-        System.out.printf("%s умножить на %s равно %s\n", arg1, arg2, resultOfMultiplication);
+        System.out.printf("%d умножить на %d равно %d\n", arg1, arg2, resultOfMultiplication);
 
         double resultOfDivision1 = divide(arg1, arg2);
         if ((resultOfDivision1 != Double.POSITIVE_INFINITY) && (resultOfDivision1 != Double.NEGATIVE_INFINITY))
-            System.out.printf("%s разделить на %s равно %s\n", arg1, arg2, resultOfDivision1);
+            System.out.printf("%d разделить на %d равно %s\n", arg1, arg2, resultOfDivision1);
         else
-            System.out.printf("%s нельзя делить на %s, потому что на 0 делить нельзя\n", arg1, arg2);
+            System.out.printf("%d нельзя делить на %d, потому что на 0 делить нельзя\n", arg1, arg2);
 
         double resultOfDivision2 = divide(arg1, arg3);
         if ((resultOfDivision2 != Double.POSITIVE_INFINITY) && (resultOfDivision2 != Double.NEGATIVE_INFINITY))
-            System.out.printf("%s разделить на %s равно %s \n", arg1, arg3, resultOfDivision2);
+            System.out.printf("%d разделить на %d равно %s \n", arg1, arg3, resultOfDivision2);
         else
-            System.out.printf("%s нельзя делить на %s, потому что на 0 делить нельзя\n", arg1, arg3);
+            System.out.printf("%d нельзя делить на %d, потому что на 0 делить нельзя\n", arg1, arg3);
 
     }
 
@@ -40,7 +40,7 @@ public class SimpleMathOperations {
     }
 
     public static long multiply(int multiplier1, int multiplier2) {
-        return multiplier1 * multiplier2;
+        return (long) multiplier1 * multiplier2;
     }
 
     /* Для метода divide тип одного из аргументов, а также возвращаемый тип определен как double,
