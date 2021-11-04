@@ -10,9 +10,9 @@ public class SimpleMathOperations {
         int arg2 = 4;
         int arg3 = 0;
 
-        long resultOfAddition = add(arg1, arg2);
+        int resultOfAddition = add(arg1, arg2);
         System.out.printf("%d плюс %d равно %d\n", arg1, arg2, resultOfAddition);
-        long resultOfSubtraction = subtract(arg1, arg2);
+        int resultOfSubtraction = subtract(arg1, arg2);
         System.out.printf("%d минус %d равно %d\n", arg1, arg2, resultOfSubtraction);
         long resultOfMultiplication = multiply(arg1, arg2);
         System.out.printf("%d умножить на %d равно %d\n", arg1, arg2, resultOfMultiplication);
@@ -21,24 +21,28 @@ public class SimpleMathOperations {
         if ((resultOfDivision1 != Double.POSITIVE_INFINITY) && (resultOfDivision1 != Double.NEGATIVE_INFINITY))
             System.out.printf("%d разделить на %d равно %s\n", arg1, arg2, resultOfDivision1);
         else
-            System.out.printf("%d нельзя делить на %d, потому что на 0 делить нельзя\n", arg1, arg2);
+            System.out.printf("%d нельзя делить на %d. На 0 делить нельзя. По крайней мере, нам сейчас.\n", arg1, arg2);
 
         double resultOfDivision2 = divide(arg1, arg3);
         if ((resultOfDivision2 != Double.POSITIVE_INFINITY) && (resultOfDivision2 != Double.NEGATIVE_INFINITY))
             System.out.printf("%d разделить на %d равно %s \n", arg1, arg3, resultOfDivision2);
         else
-            System.out.printf("%d нельзя делить на %d, потому что на 0 делить нельзя\n", arg1, arg3);
+            System.out.printf("%d нельзя делить на %d. На 0 делить нельзя. По крайней мере, нам сейчас.\n", arg1, arg3);
 
     }
 
-    public static long add(int summand1, int summand2) {
-        return summand1 - summand2;
+    public static int add(int summand1, int summand2) {
+        return summand1 + summand2;
     }
 
-    public static long subtract(int reduced, int subtracted) {
+    public static int subtract(int reduced, int subtracted) {
         return reduced - subtracted;
     }
 
+    /* В методе multiply возвращаемое значение принудительно приводится к типу long,
+       поскольку изначально результат умножения имеет тип int (раз оба множителя типа int),
+       и в случае получения числа, выходящего за пределы типа int, результат может быть потерян.
+     */
     public static long multiply(int multiplier1, int multiplier2) {
         return (long) multiplier1 * multiplier2;
     }
