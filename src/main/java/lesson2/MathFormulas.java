@@ -7,7 +7,8 @@ public class MathFormulas {
         // Вычисление объема цилиндра
         double radius = 0.5; double height = 8;
         double volume = cylinderVolume(radius, height);
-        System.out.printf("Объем цилиндра высотой %sм и радиусом %sм равен %s кубических метров\n", height, radius, volume);
+        if(volume != Double.NEGATIVE_INFINITY) System.out.printf("Объем цилиндра высотой %sм и радиусом %sм равен %s кубических метров\n", height, radius, volume);
+        else System.out.printf("Объем цилиндра высотой %sм и радиусом %sм не может быть посчитан\n", height, radius);
 
         // Решение квадратного уравнения
         int a = 5; int b = 7; int c = 2;
@@ -18,7 +19,8 @@ public class MathFormulas {
     }
 
     public static double cylinderVolume(double radius, double height){
-        return Math.PI * radius * radius * height;
+        if (radius >= 0 && height >= 0) return Math.PI * radius * radius * height;
+        else  return Double.NEGATIVE_INFINITY;
     }
 
     public static double[] quadraticEquation(int a, int b, int c){
