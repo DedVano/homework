@@ -1,7 +1,5 @@
 package lesson2;
 
-import java.io.PrintStream;
-
 public class SimpleMathOperations {
 
     public static void main(String[] args) {
