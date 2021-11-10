@@ -38,7 +38,7 @@ public class Factorials {
         if (n <= 1) {
             return 1;
         } else {
-            return n * getFactorial(n - 1);
+            return n * getFactorial(--n);
         }
 
     }
