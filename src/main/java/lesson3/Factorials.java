@@ -35,10 +35,11 @@ public class Factorials {
      * @return значение факториала
      */
     public static long getFactorial(int n) {
-        long factorialResult = 1;
-        for (int i = 1; i <= n; i++) {
-            factorialResult *= i;
+        if (n <= 1) {
+            return 1;
+        } else {
+            return n * getFactorial(n - 1);
         }
-        return factorialResult;
+
     }
 }
