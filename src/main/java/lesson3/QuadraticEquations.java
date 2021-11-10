@@ -16,8 +16,8 @@ public class QuadraticEquations {
         int b = incomingParameter.nextInt();
         System.out.print("Супер! Ну и напоследок коэффициент 'c': ");
         int c = incomingParameter.nextInt();
-        System.out.println("");
         quadraticEquation(a, b, c);
+
         if (QuadEquationResults.aIsZero) {
             System.out.println("Никак не получается что-то вычислить для получившегося уравнения, поскольку Вы ввели " +
                     "коэффициент 'а', равный нулю.");
