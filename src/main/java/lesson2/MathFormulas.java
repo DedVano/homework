@@ -9,8 +9,10 @@ public class MathFormulas {
         double height = 8;
         double volume = cylinderVolume(radius, height);
         if (volume != Double.NEGATIVE_INFINITY)
-            System.out.printf("Объем цилиндра высотой %sм и радиусом %sм равен %s кубических метров\n", height, radius, volume);
-        else System.out.printf("Объем цилиндра высотой %sм и радиусом %sм не может быть посчитан\n", height, radius);
+            System.out.printf("Объем цилиндра высотой %sм и радиусом %sм равен %s кубических метров\n",
+                    height, radius, volume);
+        else System.out.printf("Объем цилиндра высотой %sм и радиусом %sм не может быть посчитан\n",
+                height, radius);
 
         // Решение квадратного уравнения
         int a = 5;
@@ -18,7 +20,8 @@ public class MathFormulas {
         int c = 2;
         double[] squareRoots = quadraticEquation(a, b, c);
         if (squareRoots[0] != Double.POSITIVE_INFINITY)
-            System.out.printf("Корни квадратного уравнения %dx^2 + %dx + %d = 0 равны %s и %s\n", a, b, c, squareRoots[0], squareRoots[1]);
+            System.out.printf("Корни квадратного уравнения %dx^2 + %dx + %d = 0 равны %s и %s\n", a, b, c,
+                    squareRoots[0], squareRoots[1]);
         else System.out.printf("Квадратное уравнение %dx^2 + %dx + %d = 0 не имеет корней.", a, b, c);
 
     }
