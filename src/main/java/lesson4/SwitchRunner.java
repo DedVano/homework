@@ -12,20 +12,16 @@ public class SwitchRunner {
     public static String getSolutionOfSvetofor(String color) {
         String result;
         switch (color) {
-            case "красный" -> {
+            case "красный":
                 result = "Проход запрещен";
                 return result;
-                // break; если нет return
-            }
-            case "желтый" -> {
+             // break; если нет return
+            case "желтый":
                 return "Будьте внимательны";
-            }
-            case "зеленый" -> {
+            case "зеленый":
                 return "Проход разрешен";
-            }
-            default -> {
+            default:
                 return "Ничего не понятно";
-            }
         }
     }
 }
