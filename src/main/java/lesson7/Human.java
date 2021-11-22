@@ -8,8 +8,9 @@ public class Human {
     double height;
     Boolean hasQrCode;
 
-    public Human () {
+    public Human() {
     }
+
     public Human(String n, String surname, int age, double weight, double height, Boolean hasQrCode) {
         name = n;
         this.surname = surname;
@@ -18,11 +19,13 @@ public class Human {
         this.height = height;
         this.hasQrCode = hasQrCode;
     }
+
     public Human(String name, String surname, int age) {
         this.name = name;
         this.surname = surname;
         this.age = age;
     }
+
     public Human(String name, String surname) {
         this.name = name;
         this.surname = surname;
@@ -36,8 +39,6 @@ public class Human {
     public void vaccinated() {
         this.hasQrCode = true;
     }
-
-
 
 
 }
