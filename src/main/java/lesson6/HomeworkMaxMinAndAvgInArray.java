@@ -25,7 +25,7 @@ public class HomeworkMaxMinAndAvgInArray {
             System.out.println("Сложно себе представить массив с отрицательной длиной, Вас же просили - целое " +
                     "ПОЛОЖИТЕЛЬНОЕ число");
             return;
-        } else if ((arrayLength == 1) || (arrayLength == 0)) {
+        } else if (arrayLength == 1 || arrayLength == 0) {
             System.out.println("Тут такое дело, мы хотели после заполнения массива выяснить минимальное и максимальное " +
                     "значения его элементов, а также среднее арифметическое их всех, но с указанной длиной массива это сложно");
             return;

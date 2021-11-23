@@ -7,6 +7,7 @@ public class HomeworkFibonacci {
     public static void main(String[] args) {
 
         long[] fibonacciArray = new long[93];
+        int lastCachedValue = 0;
         System.out.println("Давайте рассчитаем немного Фибоначчи.");
         System.out.println("Введите номер члена последовательности от 0 до 92, и мы его рассчитаем, а если он уже есть " +
                 "в кэше, то будет еще проще, сразу покажем.");
@@ -23,10 +24,11 @@ public class HomeworkFibonacci {
                         "ввести целое число от 0 до 92, либо команду 'exit'.");
             }
             int itemNumber = scanner.nextInt();
-            if ((itemNumber < 0) || (itemNumber > 92)) {
+            if (itemNumber < 0 || itemNumber > 92) {
                 System.out.println("Нужно ввести число от 0 до 92, либо команду 'exit'.");
-            } else if ((fibonacciArray[itemNumber] == 0) && (itemNumber != 0)) {
-                fillFibonacciArray(fibonacciArray, itemNumber);
+            } else if (itemNumber > lastCachedValue) {
+                fillFibonacciArray(fibonacciArray, itemNumber, lastCachedValue);
+                lastCachedValue = itemNumber;
                 System.out.println("Элемент №" + itemNumber + " в последовательности Фибоначчи имеет значение "
                         + fibonacciArray[itemNumber] + ", рассчитано и включено в кэш.");
             } else {
@@ -37,7 +39,7 @@ public class HomeworkFibonacci {
     }
 
     /**
-     * Метод производит заполнение массива значениями из ряда Фибоначчи до n-го члена последовательности,         <br>
+     * Метод производит заполнение массива значениями из ряда Фибоначчи от m-го до n-го члена последовательности, <br>
      * где n может принимать значения от 1 до 92 включительно (в силу специфики реализации данного класса,        <br>
      * нулевой элемент массива изначально равен 0 и не требует заполнения).                                       <br>
      * Расчет ограничен 92-м членом последовательности из-за примененного в массиве типа long.                    <br>
@@ -45,11 +47,14 @@ public class HomeworkFibonacci {
      * Расчет ведется с помощью цикла, что, в отличие от расчета методом рекурсии, при расчете высоких номеров    <br>
      * не приводит к существенному замедлению расчета.
      *
-     * @param itemNumber номер члена последовательности от 1 до 92
+     * @param itemNumber      номер члена последовательности, ДО которого требуется заполнение массива, от 1 до 92
+     * @param lastCachedValue номер члена последовательности, ОТ которого требуется заполнение массива
      */
-    public static void fillFibonacciArray(long[] array, int itemNumber) {
-        array[1] = 1;
-        for (int i = 2; i <= itemNumber; i++) {
+    public static void fillFibonacciArray(long[] array, int itemNumber, int lastCachedValue) {
+        if (lastCachedValue < 1) {
+            array[1] = 1;
+        }
+        for (int i = Math.max(lastCachedValue + 1, 2); i <= itemNumber; i++) {
             array[i] = array[i - 1] + array[i - 2];
         }
     }
