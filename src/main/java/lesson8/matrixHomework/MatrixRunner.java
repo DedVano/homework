@@ -77,7 +77,7 @@ public class MatrixRunner {
                 {6, 3, 4},
                 {5, -2, -3}};
         Matrix anotherSquareMatrix = new Matrix(3, 3);
-        anotherSquareMatrix.fillMatrixArray(squareArray);
+        anotherSquareMatrix.fillMatrixByArray(squareArray);
         System.out.println("Исходная матрица (искусственно подобранная):");
         anotherSquareMatrix.matrixPrint();
         System.out.println("Детерминант матрицы:");
