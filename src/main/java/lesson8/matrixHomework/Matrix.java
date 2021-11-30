@@ -416,4 +416,12 @@ public class Matrix {
             System.out.println();
         }
     }
+
+    public int getRows() {
+        return rows;
+    }
+
+    public int getColumns() {
+        return columns;
+    }
 }

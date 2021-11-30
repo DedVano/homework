@@ -103,5 +103,7 @@ public class MatrixRunner {
         System.out.println("Перевернутая матрица:");
         sameSizeMatrix1.matrixMirror();
         sameSizeMatrix1.matrixPrint();
+
+        System.out.println("Размер матрицы 1 - " + matrix1.getRows() + " строк и " + matrix1.getColumns() + " столбцов.");
     }
 }
