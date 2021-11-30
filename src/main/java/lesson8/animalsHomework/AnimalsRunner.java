@@ -9,13 +9,11 @@ public class AnimalsRunner {
         Cow burenka = new Cow("Буренка", 12);
         Animal gosha = new Animal("Гоша", 3);
 
-        vasya.beOlder();
-        gosha.beOlder();
-        burenka.beOlder();
+        Animal[] array = new Animal[] {vasya, bobik, burenka, gosha};
 
-        vasya.voice();
-        bobik.voice();
-        burenka.voice();
-        gosha.voice();
+        for (Animal animal : array) {
+            animal.beOlder();
+            animal.voice();
+        }
     }
 }
