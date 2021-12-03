@@ -1,19 +1,17 @@
 package lesson10.converterHomework;
 
 public class Gram implements Convertable {
-    double value;
-    MassUnits unit = MassUnits.GRAM;
-//    double valueConvertedToGram;
+
+    final double value;
+    final MassUnits unit = MassUnits.GRAM;
 
     public Gram(double value) {
         this.value = value;
-//        this.valueConvertedToGram = value * MassUnits.GRAM.ratio;
     }
 
     @Override
     public Convertable convert(MassUnits unit) {
-//        return this.valueConvertedToGram / unit.ratio;
-        return this.create_new(unit, this.value * this.unit.ratio / unit.ratio);
+        return Convertable.create_new(unit, this.value * this.unit.ratio / unit.ratio);
     }
 
     public double getValue() {

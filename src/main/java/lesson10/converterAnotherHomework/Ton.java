@@ -1,9 +1,9 @@
-package lesson10.converterHomework;
+package lesson10.converterAnotherHomework;
 
 public class Ton implements Convertable {
 
-    final double value;
-    final MassUnits unit = MassUnits.TON;
+    double value;
+    MassUnits unit = MassUnits.TON;
 
     public Ton(double value) {
         this.value = value;
@@ -11,7 +11,7 @@ public class Ton implements Convertable {
 
     @Override
     public Convertable convert(MassUnits unit) {
-        return Convertable.create_new(unit, this.value * this.unit.ratio / unit.ratio);
+        return this.create_new(unit, this.value * this.unit.ratio / unit.ratio);
     }
 
     public double getValue() {

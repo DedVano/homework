@@ -1,9 +1,9 @@
-package lesson10.converterHomework;
+package lesson10.converterAnotherHomework;
 
 public class Carat implements Convertable {
 
-    final double value;
-    final MassUnits unit = MassUnits.CARAT;
+    double value;
+    MassUnits unit = MassUnits.CARAT;
 
     public Carat(double value) {
         this.value = value;
@@ -11,7 +11,7 @@ public class Carat implements Convertable {
 
     @Override
     public Convertable convert(MassUnits unit) {
-        return Convertable.create_new(unit, this.value * this.unit.ratio / unit.ratio);
+        return this.create_new(unit, this.value * this.unit.ratio / unit.ratio);
     }
 
     public double getValue() {

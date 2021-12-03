@@ -1,14 +1,13 @@
-package lesson10.converterHomework;
+package lesson10.converterAnotherHomework;
 
 public interface Convertable {
 
-    Convertable convert(MassUnits unit);
+    Convertable convert(MassUnits unit); /*{
+        return this.create_new(unit, this.value / unit.ratio);
+    }*/
 
-    double getValue();
 
-    MassUnits getUnit();
-
-    static Convertable create_new(MassUnits unit, double value) {
+    default Convertable create_new(MassUnits unit, double value) {
         switch (unit) {
             case TON -> {
                 return new Ton(value);
@@ -50,12 +49,7 @@ public interface Convertable {
         }
     }
 
-    /*static void print(double firstValue, MassUnits firstUnit, double secondValue, MassUnits secondUnit) {
-        System.out.println(firstValue + " " + firstUnit.rusNameInGenitiveCase + " равняется " + secondValue + " "
-                + secondUnit.rusNameInGenitiveCase);
-    }*/
-    static void print(Convertable sourceUnit, Convertable targetUnit) {
-        System.out.println(sourceUnit.getValue() + " " + sourceUnit.getUnit().rusNameInGenitiveCase + " равняется "
-                + targetUnit.getValue() + " " + targetUnit.getUnit().rusNameInGenitiveCase);
+    static void print(double firstValue, MassUnits firstUnit, double secondValue,MassUnits secondUnit) {
+        System.out.println(firstValue + " " + firstUnit.rusName + " равняется " + secondValue + " " + secondUnit.rusName);
     }
 }
