@@ -8,6 +8,16 @@ public interface Convertable {
 
     MassUnits getUnit();
 
+    /**
+     * Метод создает объект нового класса единиц мзмерения при конвертации. Поскольку метод реализуется во всех     <br>
+     * связанных классах одинаково, в целях упрощения рефакторинга и сокращения объема кода он реализован           <br>
+     * непосредственно в интерфейсе как метод по умолчанию.
+     *
+     * @param unit  вид единиц измерения, для которых требуется создать объект соответствующего класса (элемент      <br>
+     *              перечисления из списка MassUnits
+     * @param value значение объекта соответствующего класса
+     * @return объект класса, соответствующего выбранным единицам измерения
+     */
     static Convertable create_new(MassUnits unit, double value) {
         switch (unit) {
             case TON -> {
@@ -50,10 +60,13 @@ public interface Convertable {
         }
     }
 
-    /*static void print(double firstValue, MassUnits firstUnit, double secondValue, MassUnits secondUnit) {
-        System.out.println(firstValue + " " + firstUnit.rusNameInGenitiveCase + " равняется " + secondValue + " "
-                + secondUnit.rusNameInGenitiveCase);
-    }*/
+    /**
+     * Метод производит вывод результата конвертации из одного класса единиц измерения в другой.
+     * Реализован непосредственно в интерфейсе как метод по умолчанию.
+     *
+     * @param sourceUnit исходный объект преобразования
+     * @param targetUnit объект - результат преобразования
+     */
     static void print(Convertable sourceUnit, Convertable targetUnit) {
         System.out.println(sourceUnit.getValue() + " " + sourceUnit.getUnit().rusNameInGenitiveCase + " равняется "
                 + targetUnit.getValue() + " " + targetUnit.getUnit().rusNameInGenitiveCase);
