@@ -11,7 +11,7 @@ public class Carat implements Convertable {
 
     @Override
     public Convertable convert(MassUnits unit) {
-        return Convertable.create_new(unit, this.value * this.unit.ratio / unit.ratio);
+        return Convertable.createNew(unit, this.value * this.unit.ratio / unit.ratio);
     }
 
     public double getValue() {

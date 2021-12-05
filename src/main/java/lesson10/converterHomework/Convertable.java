@@ -18,7 +18,7 @@ public interface Convertable {
      * @param value значение объекта соответствующего класса
      * @return объект класса, соответствующего выбранным единицам измерения
      */
-    static Convertable create_new(MassUnits unit, double value) {
+    static Convertable createNew(MassUnits unit, double value) {
         switch (unit) {
             case TON -> {
                 return new Ton(value);

@@ -11,7 +11,7 @@ public class ConvertRunner {
         MassUnits sourceUnits = getUnits();
         System.out.println("Теперь введите значение в выбранных единицах.");
         double sourceValue = getValue();
-        Convertable sourceUnit = Convertable.create_new(sourceUnits, sourceValue);
+        Convertable sourceUnit = Convertable.createNew(sourceUnits, sourceValue);
 
         System.out.println("Теперь выберите единицы измерения для конвертации.");
         MassUnits targetUnits = getUnits();
