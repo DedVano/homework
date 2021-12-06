@@ -1,4 +1,4 @@
-package lesson10.converterHomework;
+package lesson10.converterHomework.unitEnumerations;
 
 /**
  * Перечисление состоит из списка наименований единиц измерения. Каждый элемент перечисления включает в себя        <br>
@@ -19,13 +19,25 @@ public enum MassUnits {
     POOD("пуд", "пудов", 16380.4964),
     CARAT("карат", "каратов", 0.2);
 
-    String rusName;
-    String rusNameInGenitiveCase;
-    double ratio;
+    private final String rusName;
+    private final String rusNameInGenitiveCase;
+    private final double ratio;
 
     MassUnits(String rusName, String rusNameInGenitiveCase, double ratio) {
         this.rusName = rusName;
         this.rusNameInGenitiveCase = rusNameInGenitiveCase;
         this.ratio = ratio;
+    }
+
+    public String getRusName() {
+        return rusName;
+    }
+
+    public String getRusNameInGenitiveCase() {
+        return rusNameInGenitiveCase;
+    }
+
+    public double getRatio() {
+        return this.ratio;
     }
 }

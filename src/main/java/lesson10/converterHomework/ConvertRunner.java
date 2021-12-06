@@ -1,5 +1,9 @@
 package lesson10.converterHomework;
 
+import lesson10.converterHomework.interfaces.Convertable;
+import lesson10.converterHomework.unitEnumerations.MassUnits;
+import lesson10.converterHomework.unitClasses.Units;
+
 import java.util.Scanner;
 
 public class ConvertRunner {
@@ -11,7 +15,7 @@ public class ConvertRunner {
         MassUnits sourceUnits = getUnits();
         System.out.println("Теперь введите значение в выбранных единицах.");
         double sourceValue = getValue();
-        Convertable sourceUnit = Convertable.createNew(sourceUnits, sourceValue);
+        Convertable sourceUnit = Units.createNew(sourceUnits, sourceValue);
 
         System.out.println("Теперь выберите единицы измерения для конвертации.");
         MassUnits targetUnits = getUnits();
@@ -30,7 +34,7 @@ public class ConvertRunner {
     private static MassUnits getUnits() {
 
         for (MassUnits unit : MassUnits.values()) {
-            System.out.println(unit.ordinal() + 1 + ". " + unit.rusName);
+            System.out.println(unit.ordinal() + 1 + ". " + unit.getRusName());
         }
         Scanner scanner = new Scanner(System.in);
         do {
