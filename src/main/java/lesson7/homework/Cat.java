@@ -1,6 +1,6 @@
-package lesson7;
+package lesson7.homework;
 
-public class Dog {
+public class Cat {
     String name;
     int age;
     boolean isAPet;
@@ -8,26 +8,26 @@ public class Dog {
     int swimDistance;
     int countOfJumps;
 
-    int canRunAtOneTime = 500;
-    int canSwimAtOneTime = 10;
-    int canJumpAtOneTime = 2;
+    int canRunAtOneTime = 200;
+    int canSwimAtOneTime = 0;
+    int canJumpAtOneTime = 5;
 
-    public Dog(String name, int age, boolean isAPet) {
+    public Cat(String name, int age, boolean isAPet) {
         this.name = name;
         this.age = age;
         this.isAPet = isAPet;
     }
 
-    public Dog(String name, int age) {
+    public Cat(String name, int age) {
         this.name = name;
         this.age = age;
     }
 
-    public Dog(String name) {
+    public Cat(String name) {
         this.name = name;
     }
 
-    public Dog(String name, int age, boolean isAPet, int runDistance, int swimDistance, int countOfJumps) {
+    public Cat(String name, int age, boolean isAPet, int runDistance, int swimDistance, int countOfJumps) {
         this.name = name;
         this.age = age;
         this.isAPet = isAPet;
@@ -38,37 +38,40 @@ public class Dog {
 
     public void beOlder() {
         this.age++;
-        System.out.printf("Собака по имени %s состарилась на год. Теперь её возраст %d лет.\n", this.name, this.age);
+        System.out.printf("Кошка по имени %s состарилась на год. Теперь её возраст %d лет.\n", this.name, this.age);
     }
 
     public void beOlder(int howOlder) {
         this.age += howOlder;
-        System.out.printf("Собака по имени %s состарилась на %d лет. Теперь её возраст %d лет.\n", this.name, howOlder,
+        System.out.printf("Кошка по имени %s состарилась на %d лет. Теперь её возраст %d лет.\n", this.name, howOlder,
                 this.age);
     }
 
     public void run(int distance) {
         if (distance > canRunAtOneTime) {
             this.runDistance += this.canRunAtOneTime;
-            System.out.printf("Собаку по имени %s попросили пробежать %d метров, но она пробежала только %d, потому что" +
-                    " дальше не умеет.\nВсего, таким образом, за свою жизнь она пробежала %d метров.\n", this.name,
+            System.out.printf("Кошку по имени %s попросили пробежать %d метров, но она пробежала только %d, потому что" +
+                            " дальше не умеет.\nВсего, таким образом, за свою жизнь она пробежала %d метров.\n", this.name,
                     distance, this.canRunAtOneTime, this.runDistance);
         } else {
             this.runDistance += distance;
-            System.out.printf("Собака по имени %s пробежала %d метров, как её и попросили.\n" +
+            System.out.printf("Кошка по имени %s пробежала %d метров, как её и попросили.\n" +
                     "Всего за свою жизнь она пробежала %d метров.\n", this.name, distance, this.runDistance);
         }
     }
 
     public void swim(int distance) {
-        if (distance > canSwimAtOneTime) {
+        if (canSwimAtOneTime == 0) {
+            System.out.printf("Кошку по имени %s попросили проплыть %d метров, но она совсем не умеет плавать\n",
+                    this.name, distance);
+        } else if (distance > canSwimAtOneTime) {
             this.swimDistance += this.canSwimAtOneTime;
-            System.out.printf("Собаку по имени %s попросили проплыть %d метров, но она проплыла только %d, потому что" +
+            System.out.printf("Кошку по имени %s попросили проплыть %d метров, но она проплыла только %d, потому что" +
                             " дальше не умеет.\nВсего, таким образом, за свою жизнь она проплыла %d метров.\n", this.name,
                     distance, this.canSwimAtOneTime, this.swimDistance);
         } else {
             this.swimDistance += distance;
-            System.out.printf("Собака по имени %s проплыла %d метров, как её и попросили.\n" +
+            System.out.printf("Кошка по имени %s проплыла %d метров, как её и попросили.\n" +
                     "Всего за свою жизнь она проплыла %d метров.\n", this.name, distance, this.swimDistance);
         }
     }
@@ -76,12 +79,12 @@ public class Dog {
     public void jump(int counts) {
         if (counts > canJumpAtOneTime) {
             this.countOfJumps += this.canJumpAtOneTime;
-            System.out.printf("Собаку по имени %s попросили прыгнуть %d раз, но она прыгнула только %d, потому что" +
+            System.out.printf("Кошку по имени %s попросили прыгнуть %d раз, но она прыгнула только %d, потому что" +
                             " больше не умеет.\nВсего, таким образом, за свою жизнь она прыгнула %d раз.\n", this.name,
                     counts, this.canJumpAtOneTime, this.countOfJumps);
         } else {
             this.countOfJumps += counts;
-            System.out.printf("Собака по имени %s прыгнула %d раз, как её и попросили.\n" +
+            System.out.printf("Кошка по имени %s прыгнула %d раз, как её и попросили.\n" +
                     "Всего за свою жизнь она прыгнула %d раз.\n", this.name, counts, this.countOfJumps);
         }
     }
