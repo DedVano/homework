@@ -10,7 +10,7 @@ import java.util.stream.IntStream;
 
 public class Runner {
     public static void main(String[] args) {
-        AllCars[] cars = new AllCars[10];
+        AllCars[] cars = new AllCars[30];
         for (int eachCar = 0; eachCar < cars.length; eachCar++) {
             cars[eachCar] = Math.round(Math.random() * 3) == 1 ? new Car() : new Truck();
         }
@@ -24,6 +24,8 @@ public class Runner {
                 """);
 
         IntStream.rangeClosed(1, 2).forEach(iteration -> {
+            System.out.println("-------------------------------------------------------------------------------------" +
+                    "--------------------------------");
             for (AllCars eachCar : cars) {
                 try {
                     if (!eachCar.isUnderArrest()) {
