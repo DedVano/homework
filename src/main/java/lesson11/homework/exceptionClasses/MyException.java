@@ -2,7 +2,7 @@ package lesson11.homework.exceptionClasses;
 
 import lesson11.homework.enumerations.ExceptionReasons;
 
-public class MyException extends Exception {
+public class MyException extends RuntimeException {
     ExceptionReasons reason;
     String type;
     String numberPlate;

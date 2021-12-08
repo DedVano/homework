@@ -60,7 +60,7 @@ public class Runner {
         });
     }
 
-    static void tryToPassCheckpoint(AllCars car) throws MyException {
+    static void tryToPassCheckpoint(AllCars car) {
         if (car.getSpeed() > 80 && car.getSpeed() <= 100) {
             throw new MyException("Превышение допустимой скорости",
                     ExceptionReasons.SPEED, car.getType(), car.getNumberPlate());
