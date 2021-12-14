@@ -64,16 +64,15 @@ public class ArrayRunner {
 
     /**
      * Метод осуществляет суммирование всех ячеек матрицы, передаваемой в качестве аргумента.
-     * В случае несоответствия размера передаваемой матрицы (5х5) генерирует исключение MyArraySizeException.
-     * В случае обнаружение в элементах передаваемой матрицы несоответствующего заданному типу (целое число)
-     * генерирует исключение MyArrayDataException.
      *
      * @param matrix матрица, элементы которой подлежат суммированию
      * @return сумма элементов передаваемой матрицы
+     * @throws MyArraySizeException в случае несоответствия размера передаваемой матрицы (5х5)
+     * @throws MyArrayDataException в случае обнаружения в элементах передаваемой матрицы несоответствующего заданному типу (целое число)
      */
     public static int summ(List<List<String>> matrix) {
         if (matrix.size() != 5) {
-            throw new MyArraySizeException("Количество строк не совпадает с заданным.", true, matrix.size());
+            throw new MyArraySizeException("Количество строк не совпадает с заданным.", matrix.size());
         }
         for (List<String> row : matrix) {
             if (row.size() != 5) {

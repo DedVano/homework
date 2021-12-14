@@ -7,9 +7,9 @@ package lesson12.homework.exceptions;
  * оно наследуется от класса RuntimeException и является непроверяемым (unchecked).
  */
 public class MyArrayDataException extends RuntimeException {
-    int rowCausedProblem;
-    int columnCausedProblem;
-    String wrongField;
+    private final int rowCausedProblem;
+    private final int columnCausedProblem;
+    private final String wrongField;
 
     /**
      * Создает новое исключение с сопроводительным сообщением, номерами строки и столбца, в которых обнаружен
