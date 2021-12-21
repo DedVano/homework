@@ -75,8 +75,7 @@ public class ContactForArray {
     }
 
     public void addContactToPhoneBook(ContactForArray contact) {
-        ContactForArray[] newArray = Arrays.copyOf(contactsInPhonebook, contactsInPhonebook.length + 1);
-        newArray[newArray.length - 1] = contact;
-        contactsInPhonebook = newArray;
+        contactsInPhonebook = Arrays.copyOf(contactsInPhonebook, contactsInPhonebook.length + 1);
+        contactsInPhonebook[contactsInPhonebook.length - 1] = contact;
     }
 }
