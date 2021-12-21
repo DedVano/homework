@@ -11,7 +11,7 @@ public class Runner {
 
     public static void main(String[] args) {
 
-        int phoneBookCapacity = 10_000;
+        int phoneBookCapacity = 5_000;
         int contactProbabilityToBeInAnotherBook = 5;
         System.out.print("Формируем телефонные справочники в различных хранилищах...  ");
         Collection<Long> phonesList = new HashSet<>();
