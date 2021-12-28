@@ -24,13 +24,13 @@ public class Logger extends Thread {
         while (!currentThread().isInterrupted()) {
             try (FileWriter fileWriter = new FileWriter(fileName, true)) {
                 String formattedLogLevel = String.format("<%s>", this.logLevel);
-                String message = String.format("<%tF> <%<tT.%<tL> %7s Служебное сообщение процесса '%s' #%d.\n",
+                String message = String.format("<%tF> <%<tT.%<tL> %7s <%s> Служебное сообщение #%d.\n",
                         new Date(), formattedLogLevel, this.threadName, this.messagesCount + 1);
-                String messageLine1 = String.format("%36sСтрока 1 сообщения #%d процесса '%s'.\n", " ",
+                String messageLine1 = String.format("%46sСтрока 1 сообщения #%d процесса '%s'.\n", " ",
                         this.messagesCount + 1, this.threadName);
-                String messageLine2 = String.format("%36sСтрока 2 сообщения #%d процесса '%s'.\n", " ",
+                String messageLine2 = String.format("%46sСтрока 2 сообщения #%d процесса '%s'.\n", " ",
                         this.messagesCount + 1, this.threadName);
-                String messageLine3 = String.format("%36sСтрока 3 сообщения #%d процесса '%s'.\n", " ",
+                String messageLine3 = String.format("%46sСтрока 3 сообщения #%d процесса '%s'.\n", " ",
                         this.messagesCount + 1, this.threadName);
                 fileWriter.write(message);
                 fileWriter.write(messageLine1);
