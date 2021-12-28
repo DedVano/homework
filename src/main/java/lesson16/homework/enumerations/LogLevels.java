@@ -7,9 +7,6 @@ public enum LogLevels {
     DEBUG(4),
     TRACE(5);
 
-    private int logLevel;
-
     LogLevels(int logLevel) {
-        this.logLevel = logLevel;
     }
 }

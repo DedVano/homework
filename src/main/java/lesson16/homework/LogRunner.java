@@ -34,6 +34,6 @@ public class LogRunner {
         thread2.interrupt();
         thread3.interrupt();
         System.out.println("Запись окончена. Посмотрим, что у нас получилось:");
-        new LogReader(fileName).printLog();
+        new LogReader(fileName).printAndDeleteLog();
     }
 }

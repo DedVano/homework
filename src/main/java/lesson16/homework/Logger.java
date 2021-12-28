@@ -39,9 +39,9 @@ public class Logger extends Thread {
                 fileWriter.close();
                 this.messagesCount++;
                 Thread.sleep(new Random().nextInt(5000));
-            } catch (IOException e) {
+            } catch (IOException ioe) {
                 System.out.println("Произошла ошибка ввода-вывода.");
-            } catch (InterruptedException e) {
+            } catch (InterruptedException ie) {
                 break;
             }
         }
