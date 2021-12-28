@@ -1,6 +1,8 @@
 package lesson16.homework;
 
 import lesson16.homework.enumerations.LogLevels;
+import lesson16.homework.workClasses.LogReader;
+import lesson16.homework.workClasses.Logger;
 
 import java.io.IOException;
 import java.nio.file.Files;

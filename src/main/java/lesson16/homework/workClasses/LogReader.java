@@ -1,4 +1,4 @@
-package lesson16.homework;
+package lesson16.homework.workClasses;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;

@@ -1,4 +1,4 @@
-package lesson16.homework;
+package lesson16.homework.workClasses;
 
 import lesson16.homework.enumerations.LogLevels;
 
