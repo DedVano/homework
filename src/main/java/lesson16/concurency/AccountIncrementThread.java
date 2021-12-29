@@ -13,6 +13,10 @@ public class AccountIncrementThread extends Thread {
     }
 
     public void run() {
-        account.deposit(value);
+        synchronized (account) {
+            System.out.println("Осуществляем пополнение счета из " + currentThread().getName());
+            account.deposit(value);
+            System.out.println("Текущее состояние счета: " + account.getBalance());
+        }
     }
 }

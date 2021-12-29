@@ -23,7 +23,7 @@ public class ThreadRunner {
         System.out.println(Thread.currentThread().getName());
 //        print(summa(a, b));
 
-//        Thread.sleep(60_000);
+        Thread.sleep(10_000);
     }
 
     private static int summa(int a, int b) {
