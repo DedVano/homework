@@ -10,8 +10,8 @@ public class Writer extends Thread {
     private final String fileExtension;
     private final BlockingQueue<String> strings;
 
-    public Writer(String fileName, String fileExtension, BlockingQueue<String> strings) {
-        this.fileNameMask = fileName;
+    public Writer(String fileNameMask, String fileExtension, BlockingQueue<String> strings) {
+        this.fileNameMask = fileNameMask;
         this.fileExtension = fileExtension;
         this.strings = strings;
     }
