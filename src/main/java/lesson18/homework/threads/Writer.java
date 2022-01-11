@@ -26,15 +26,19 @@ public class Writer extends Thread {
                 break;
             }
             if (string != null) {
-                try (FileWriter fw = new FileWriter(fileNameMask + fileNumber + fileExtension)) {
-                    fw.write(string);
-                } catch (IOException e) {
-                    System.out.println("Произошла ошибка ввода-вывода.");
-                }
+                writeFile(fileNumber, string);
             } else {
                 Thread.currentThread().interrupt();
             }
             fileNumber++;
+        }
+    }
+
+    private void writeFile(int fileNumber, String string) {
+        try (FileWriter fw = new FileWriter(fileNameMask + fileNumber + fileExtension)) {
+            fw.write(string);
+        } catch (IOException e) {
+            System.out.println("Произошла ошибка ввода-вывода.");
         }
     }
 }
