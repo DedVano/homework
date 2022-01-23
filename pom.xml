@@ -14,8 +14,8 @@
         <lombok.version>1.18.22</lombok.version>
         <commons-io.version>2.11.0</commons-io.version>
         <jaxb.version>3.0.1</jaxb.version>
-        <jackson-databind.version>2.12.5</jackson-databind.version>
-        <opencsv.version>5.4</opencsv.version>
+        <jackson-databind.version>2.13.1</jackson-databind.version>
+        <opencsv.version>5.5.2</opencsv.version>
     </properties>
 
     <dependencies>
@@ -48,9 +48,20 @@
             <version>${jackson-databind.version}</version>
         </dependency>
         <dependency>
+            <groupId>org.json</groupId>
+            <artifactId>json</artifactId>
+            <version>20211205</version>
+        </dependency>
+        <dependency>
             <groupId>com.opencsv</groupId>
             <artifactId>opencsv</artifactId>
             <version>${opencsv.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jetbrains</groupId>
+            <artifactId>annotations</artifactId>
+            <version>RELEASE</version>
+            <scope>compile</scope>
         </dependency>
     </dependencies>
 
