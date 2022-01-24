@@ -1,4 +1,4 @@
-package lesson20.homework;
+package lesson20.homework.serviceClasses;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import jakarta.xml.bind.annotation.XmlAccessType;

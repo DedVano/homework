@@ -1,8 +1,12 @@
-package lesson20.homework;
+package lesson20.homework.oldRunner;
 
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.DeserializationFeature;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.xml.bind.JAXBContext;
 import jakarta.xml.bind.JAXBException;
 import jakarta.xml.bind.Marshaller;
+import jakarta.xml.bind.Unmarshaller;
 import lesson20.homework.serviceClasses.Department;
 import lesson20.homework.serviceClasses.Employee;
 import lesson20.homework.serviceClasses.EmployeeWrapper;
@@ -64,15 +68,19 @@ public class Runner {
         employees.add(new Employee("7d-2149", "lobanov", "Лобанов Демид Давидович", itDepartment, programmer));
         employees.add(new Employee("2v-1290", "korotkov", "Коротков Тимофей Артурович", cleaningDepartment, cleaningManager));
 
-        System.out.println("Выгружаем базу сотрудников в документ XML.");
-        if (!writeToXML(employeeWrapper, fileFullNameXML)) {
-            return;
-        }
-        System.out.println("Поищем в XML документе сотрудников с окладом выше среднего.");
-        findBigSalary(fileFullNameXML);
+//        System.out.println("Выгружаем базу сотрудников в документ XML.");
+//        if (!writeToXML(employeeWrapper, fileFullNameXML)) {
+//            return;
+//        }
+//        System.out.println("Поищем в XML документе сотрудников с окладом выше среднего.");
+//        findBigSalary(fileFullNameXML);
+//
+//        System.out.println("Теперь преобразуем файл XML в формат JSON.");
+//        convertXML2JSON(fileFullNameXML, fileFullNameJSON);
+//
+//        System.out.println("Найдем нечетных сотрудников в списке.");
+        findFromJSON(fileFullNameJSON);
 
-        System.out.println("Теперь преобразуем файл XML в формат JSON.");
-        convertXML2JSON(fileFullNameXML, fileFullNameJSON);
     }
 
     private static boolean writeToXML(EmployeeWrapper employeeWrapper, Path xmlFile) {
@@ -91,6 +99,13 @@ public class Runner {
             return false;
         }
         return true;
+    }
+
+    public static List<Employee> getCars(String xmlContent) throws JAXBException {
+        JAXBContext context = JAXBContext.newInstance(EmployeeWrapper.class);
+        Unmarshaller unmarshaller = context.createUnmarshaller();
+        EmployeeWrapper result = (EmployeeWrapper) unmarshaller.unmarshal(new StringReader(xmlContent));
+        return result == null ? null : result.getEmployees();
     }
 
     private static void findBigSalary(Path xmlFile) {
@@ -141,5 +156,35 @@ public class Runner {
         } catch (IOException e) {
             System.out.println("При обращении к файлу возникла ошибка ввода-вывода");
         }
+    }
+
+    private static void findFromJSON(Path fileNameJSON) {
+        ObjectMapper objectMapper = new ObjectMapper();
+        objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+        // JSON file to Java object
+        try (FileReader reader = new FileReader(fileNameJSON.toFile())){
+            JsonParser jsonParser = new JsonParser();
+//            Employee employees = objectMapper.readValue(fileNameJSON.toFile(), Employee.class);
+//            Employee[] employees = objectMapper.readValue(fileNameJSON.toFile(), Employee[].class);
+//            System.out.println(employees);
+//            for (int i = 0; i < employees.length; i++) {
+//                if ((i % 2) != 0) {
+//                    System.out.println(employees[i]);
+//                }
+//            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+//        List<Account> accounts = objectMapper.readValue(new File("c:\\test\\account.json"), new TypeReference<>() {
+//
+//        });
+//        Account account = objectMapper.readValue(new File("d:\\account.json"), new TypeReference<>() {
+//        });
+//        // compact print
+//        System.out.println(account);
+//        // pretty print
+//        String prettyAccount = objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(account);
+//        System.out.println(prettyAccount);
     }
 }

@@ -1,4 +1,4 @@
-package lesson20.homework;
+package lesson20.homework.serviceClasses;
 
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
