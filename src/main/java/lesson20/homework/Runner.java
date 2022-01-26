@@ -1,5 +1,8 @@
 package lesson20.homework;
 
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.DeserializationFeature;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.xml.bind.JAXBContext;
 import jakarta.xml.bind.JAXBException;
 import jakarta.xml.bind.Marshaller;
@@ -28,8 +31,12 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Runner {
+
+    private static final TypeReference<EmployeeWrapper> TR = new TypeReference<>() {
+    };
 
     public static void main(String[] args) {
         String filepath = "src/main/resources/";
@@ -73,6 +80,9 @@ public class Runner {
 
         System.out.println("Теперь преобразуем файл XML в формат JSON.");
         convertXML2JSON(fileFullNameXML, fileFullNameJSON);
+
+        System.out.println("Найдем из JSON файла нечетных сотрудниковю");
+        findFromJSON(fileFullNameJSON);
     }
 
     private static boolean writeToXML(EmployeeWrapper employeeWrapper, Path xmlFile) {
@@ -138,6 +148,19 @@ public class Runner {
     private static void convertXML2JSON(Path fileNameXML, Path fileNameJSON) {
         try (FileWriter writer = new FileWriter(fileNameJSON.toFile()); Reader reader = new FileReader(fileNameXML.toFile())) {
             writer.write(XML.toJSONObject(reader).toString(4));
+        } catch (IOException e) {
+            System.out.println("При обращении к файлу возникла ошибка ввода-вывода");
+        }
+    }
+
+    private static void findFromJSON(Path fileNameJSON) {
+        ObjectMapper objectMapper = new ObjectMapper();
+        objectMapper.configure(DeserializationFeature.UNWRAP_ROOT_VALUE, true);
+        try {
+            EmployeeWrapper employeeList = objectMapper.readValue(fileNameJSON.toFile(), TR);
+            List<Employee> oddEmployees = employeeList.getEmployees().stream()
+                    .filter(employee -> employeeList.getEmployees().indexOf(employee) % 2 == 1).collect(Collectors.toList());
+            System.out.println(oddEmployees);
         } catch (IOException e) {
             System.out.println("При обращении к файлу возникла ошибка ввода-вывода");
         }

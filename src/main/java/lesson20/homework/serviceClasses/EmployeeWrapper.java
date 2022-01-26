@@ -1,5 +1,7 @@
 package lesson20.homework.serviceClasses;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonRootName;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
@@ -13,10 +15,12 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@XmlRootElement(name = "Employees")
 @XmlAccessorType(XmlAccessType.FIELD)
-
+@XmlRootElement(name = "Employees")
+@JsonRootName("Employees")
 public class EmployeeWrapper {
     @XmlElement(name = "Employee")
+    @JsonProperty("Employee")
     private List<Employee> employees;
 }
+
