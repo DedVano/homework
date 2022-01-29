@@ -15,7 +15,7 @@ public class WeatherAPIRunner {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Введите название города: ");
+        System.out.print("Введите название города на русском или на английском языке: ");
         String cityName = scanner.nextLine();
         String adaptedCityName = cityName.replace(" ", "%20");
 
