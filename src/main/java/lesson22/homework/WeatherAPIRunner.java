@@ -32,7 +32,7 @@ public class WeatherAPIRunner {
 
     }
 
-    public static boolean getWeatherInfoFromApi(String uriString) {
+    private static boolean getWeatherInfoFromApi(String uriString) {
         try {
             URI uri = new URI(uriString);
             URL url = uri.toURL();
