@@ -100,41 +100,9 @@ public class AddBooksToDatabase {
              final PreparedStatement prepStForAddBook = connection
                      .prepareStatement("insert into books (isbn, author, name, series, number_in_series) values (?, ?, ?, ?, ?);")
         ) {
-            st.execute("""
-                    create table if not exists authors
-                    (
-                        id int not null primary key,
-                        name varchar(255) not null
-                    );
-                    """);
-            st.execute("""
-                    create table if not exists series
-                    (
-                        id int not null primary key,
-                        name varchar(255) null
-                    );
-                    """);
-            st.execute("""
-                    create table if not exists books
-                    (
-                        id int auto_increment primary key,
-                        isbn varchar(25) null,
-                        author int null,
-                        name varchar(255) not null,
-                        series int null,
-                        number_in_series int null,
-                        constraint books_authors_id_fk
-                            foreign key (author) references authors (id),
-                        constraint books_series_id_fk
-                            foreign key (series) references series (id)
-                    );
-                    """);
-            st.execute("delete from books;");
-            st.execute("delete from authors;");
-            st.execute("delete from series;");
-            st.execute("alter table books auto_increment=0;");
-            st.execute("alter table authors auto_increment=0;");
-            st.execute("alter table series auto_increment=0;");
+
+            prepareDatabase(st);
+
             for (Author author : authorList) {
                 prepStForAddAuthor.setInt(1, author.getId());
                 prepStForAddAuthor.setString(2, author.getName());
@@ -163,5 +131,43 @@ public class AddBooksToDatabase {
             return false;
         }
         return true;
+    }
+
+    private static void prepareDatabase(Statement st) throws SQLException {
+        st.execute("""
+                create table if not exists authors
+                (
+                    id int not null primary key,
+                    name varchar(255) not null
+                );
+                """);
+        st.execute("""
+                create table if not exists series
+                (
+                    id int not null primary key,
+                    name varchar(255) null
+                );
+                """);
+        st.execute("""
+                create table if not exists books
+                (
+                    id int auto_increment primary key,
+                    isbn varchar(25) null,
+                    author int null,
+                    name varchar(255) not null,
+                    series int null,
+                    number_in_series int null,
+                    constraint books_authors_id_fk
+                        foreign key (author) references authors (id),
+                    constraint books_series_id_fk
+                        foreign key (series) references series (id)
+                );
+                """);
+        st.execute("delete from books;");
+        st.execute("delete from authors;");
+        st.execute("delete from series;");
+        st.execute("alter table books auto_increment=0;");
+        st.execute("alter table authors auto_increment=0;");
+        st.execute("alter table series auto_increment=0;");
     }
 }
