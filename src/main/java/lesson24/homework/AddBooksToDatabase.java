@@ -167,7 +167,5 @@ public class AddBooksToDatabase {
         st.execute("delete from authors;");
         st.execute("delete from series;");
         st.execute("alter table books auto_increment=0;");
-        st.execute("alter table authors auto_increment=0;");
-        st.execute("alter table series auto_increment=0;");
     }
 }
