@@ -3,6 +3,8 @@ package lesson28.homework.service.impl;
 import lesson28.homework.service.Archivator;
 import lesson28.homework.service.UserConsole;
 import lombok.RequiredArgsConstructor;
+import net.lingala.zip4j.ZipFile;
+import net.lingala.zip4j.exception.ZipException;
 import org.apache.commons.io.FilenameUtils;
 import org.springframework.stereotype.Service;
 
@@ -123,6 +125,25 @@ public class ArchivatorImpl implements Archivator {
             return false;
         } catch (IOException e) {
             userConsole.print("Произошла ошибка ввода-вывода.");
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public boolean unpackEncrypted(String archNameWithPath, String password) {
+        try (ZipFile zipFile = new ZipFile(archNameWithPath)) {
+            if (zipFile.isEncrypted()) {
+                zipFile.setPassword(password.toCharArray());
+            }
+            zipFile.extractAll(FilenameUtils.getFullPath(archNameWithPath) + FilenameUtils.getBaseName(archNameWithPath) + "\\");
+        } catch (ZipException ze) {
+            userConsole.print("При разархивировании произошла ошибка.");
+            userConsole.print(ze.getMessage());
+            return false;
+        } catch (IOException ioe) {
+            userConsole.print("При открытии файла с архивом произошла ошибка ввода-вывода.");
+            userConsole.print(ioe.getMessage());
             return false;
         }
         return true;

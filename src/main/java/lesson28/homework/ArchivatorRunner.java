@@ -13,20 +13,36 @@ public class ArchivatorRunner {
         ConfigurableApplicationContext runContext = SpringApplication.run(ArchivatorRunner.class, args);
         Archivator archivator = runContext.getBean(Archivator.class);
         UserConsole userConsole = runContext.getBean(UserConsole.class);
-        userConsole.printf("Выберите операцию:\n\t1. Упаковать файл в архив\n\t2. Распаковать файл(ы) из архива\nДля выхода наберите 'exit'.\n");
+        userConsole.printf("""
+                Выберите операцию:
+                \t1. Упаковать файл в архив
+                \t2. Распаковать файл(ы) из архива
+                \t3. Распаковать все файлы из запароленного архива
+                Для выхода наберите 'exit'.
+                """);
         String packOrUnpackChoice;
+        String messageAfterPackOrUnpack = """
+
+                Выберите операцию:
+                \t1. Упаковать файл в архив
+                \t2. Распаковать файл(ы) из архива
+                \t3. Распаковать все файлы из запароленного архива
+                Для выхода наберите 'exit'.
+                """;
         do {
             packOrUnpackChoice = userConsole.getRequestf("Выберите нужный пункт:> ");
             switch (packOrUnpackChoice) {
                 case "1" -> {
                     packing(archivator, userConsole);
-                    packOrUnpackChoice = "";
-                    userConsole.printf("\nВыберите операцию:\n\t1. Упаковать файл в архив\n\t2. Распаковать файл(ы) из архива\nДля выхода наберите 'exit'.\n");
+                    userConsole.printf(messageAfterPackOrUnpack);
                 }
                 case "2" -> {
                     unpacking(archivator, userConsole);
-                    packOrUnpackChoice = "";
-                    userConsole.printf("\nВыберите операцию:\n\t1. Упаковать файл в архив\n\t2. Распаковать файл(ы) из архива\nДля выхода наберите 'exit'.\n");
+                    userConsole.printf(messageAfterPackOrUnpack);
+                }
+                case "3" -> {
+                    unpackingEncrypted(archivator, userConsole);
+                    userConsole.printf(messageAfterPackOrUnpack);
                 }
                 case "exit" -> {
                     userConsole.print("Всего доброго, спасибо, что воспользованись нашим архиватором!");
@@ -62,6 +78,21 @@ public class ArchivatorRunner {
         userConsole.print("Для разархивирования всех файлов в архиве оставьте строку пустой.");
         String fileToUnpack = userConsole.getRequestf(":> ");
         if (archivator.unpack(archName, fileToUnpack)) {
+            userConsole.print("Разархивация прошла успешно.");
+        } else {
+            userConsole.print("Разархивация не удалась.");
+        }
+    }
+
+    private static void unpackingEncrypted(Archivator archivator, UserConsole userConsole) {
+        userConsole.print("Введите имя архива, включая путь:");
+        String archName;
+        do {
+            archName = userConsole.getRequestf(":> ");
+        } while (archName.equals(""));
+        userConsole.print("Введите пароль архива");
+        String password = userConsole.getRequestf(":> ");
+        if (archivator.unpackEncrypted(archName, password)) {
             userConsole.print("Разархивация прошла успешно.");
         } else {
             userConsole.print("Разархивация не удалась.");
