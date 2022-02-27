@@ -1,8 +1,8 @@
 package lesson20.dto;
 
-import jakarta.xml.bind.annotation.XmlRootElement;
 import lombok.Data;
 
+import javax.xml.bind.annotation.XmlRootElement;
 import java.math.BigDecimal;
 
 @Data

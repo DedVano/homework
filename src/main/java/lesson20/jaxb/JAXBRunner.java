@@ -1,15 +1,15 @@
 package lesson20.jaxb;
 
 
-import jakarta.xml.bind.JAXBContext;
-import jakarta.xml.bind.JAXBException;
-import jakarta.xml.bind.Marshaller;
-import jakarta.xml.bind.Unmarshaller;
 import lesson20.dto.Car;
 import lesson20.dto.CarWrapper;
 import lesson20.dto.Owner;
 import lombok.SneakyThrows;
 
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBException;
+import javax.xml.bind.Marshaller;
+import javax.xml.bind.Unmarshaller;
 import java.io.StringReader;
 import java.io.StringWriter;
 import java.math.BigDecimal;

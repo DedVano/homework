@@ -13,32 +13,31 @@
         <java.version>17</java.version>
         <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
         <maven-surefire-plugin.version>3.0.0-M4</maven-surefire-plugin.version>
-        <commons-io.version>2.11.0</commons-io.version>
+        <commons-io.version>1.3.2</commons-io.version>
+        <commons-lang.version>2.5</commons-lang.version>
         <jaxb.version>3.0.1</jaxb.version>
-        <jackson-databind.version>2.13.1</jackson-databind.version>
+        <!--jackson-databind.version>2.13.1</jackson-databind.version-->
         <opencsv.version>5.5.2</opencsv.version>
-        <junit.version>4.13.2</junit.version>
+        <!--junit.version>4.13.2</junit.version-->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <mockito-core.version>4.2.0</mockito-core.version>
-        <mysql-connector-java.version>8.0.25</mysql-connector-java.version>
+        <!--mockito-core.version>4.2.0</mockito-core.version-->
+        <!--mysql-connector-java.version>8.0.26</mysql-connector-java.version-->
         <spring-context.version>5.3.15</spring-context.version>
-        <json-path.version>2.4.0</json-path.version>
+        <!--json-path.version>2.4.0</json-path.version-->
         <spring-context.version>5.3.15</spring-context.version>
         <zip4j.version>2.9.1</zip4j.version>
+        <json.version>20211205</json.version>
+        <spring-shell-starter.version>2.0.1.RELEASE</spring-shell-starter.version>
     </properties>
 
     <parent>
-        <artifactId>spring-boot-starter-parent</artifactId>
         <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
         <version>2.6.3</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
     <dependencies>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter</artifactId>
-        </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
@@ -46,15 +45,20 @@
         </dependency>
         <!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
         <dependency>
-            <groupId>commons-io</groupId>
+            <groupId>org.apache.commons</groupId>
             <artifactId>commons-io</artifactId>
             <version>${commons-io.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-lang</groupId>
+            <artifactId>commons-lang</artifactId>
+            <version>${commons-lang.version}</version>
         </dependency>
         <!-- JAXB dependency -->
         <dependency>
             <groupId>jakarta.xml.bind</groupId>
             <artifactId>jakarta.xml.bind-api</artifactId>
-            <version>${jaxb.version}</version>
+            <!--version>${jaxb.version}</version-->
         </dependency>
         <dependency>
             <groupId>com.sun.xml.bind</groupId>
@@ -65,55 +69,83 @@
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
-            <version>${jackson-databind.version}</version>
+            <!--version>${jackson-databind.version}</version-->
         </dependency>
         <dependency>
             <groupId>org.json</groupId>
             <artifactId>json</artifactId>
-            <version>20211205</version>
+            <version>${json.version}</version>
         </dependency>
         <dependency>
             <groupId>com.opencsv</groupId>
             <artifactId>opencsv</artifactId>
             <version>${opencsv.version}</version>
         </dependency>
-        <dependency>
+        <!--<dependency>
             <groupId>org.jetbrains</groupId>
             <artifactId>annotations</artifactId>
             <version>RELEASE</version>
             <scope>compile</scope>
-        </dependency>
+        </dependency>-->
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>${junit.version}</version>
+            <!--version>${junit.version}</version-->
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.mockito</groupId>
             <artifactId>mockito-core</artifactId>
-            <version>${mockito-core.version}</version>
+            <!--version>${mockito-core.version}</version-->
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
-            <version>${mysql-connector-java.version}</version>
+            <!--version>${mysql-connector-java.version}</version-->
         </dependency>
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-core</artifactId>
-            <scope>provided</scope>
         </dependency>
         <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-context</artifactId>
-            <version>${spring-context.version}</version>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>javax.validation</groupId>
+            <artifactId>validation-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate.validator</groupId>
+            <artifactId>hibernate-validator</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.liquibase</groupId>
+            <artifactId>liquibase-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+                <dependency>
+                    <groupId>org.springframework.shell</groupId>
+                    <artifactId>spring-shell-starter</artifactId>
+                    <version>${spring-shell-starter.version}</version>
+                </dependency>
+        <!--        <dependency>-->
+        <!--            <groupId>org.springframework.boot</groupId>-->
+        <!--            <artifactId>spring-boot-starter-jdbc</artifactId>-->
+        <!--        </dependency>-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+            <scope>optional</scope>
         </dependency>
         <dependency>
             <groupId>com.jayway.jsonpath</groupId>
             <artifactId>json-path</artifactId>
-            <version>${json-path.version}</version>
+            <!--version>${json-path.version}</version-->
         </dependency>
         <!-- https://mvnrepository.com/artifact/net.lingala.zip4j/zip4j -->
         <dependency>
@@ -129,7 +161,7 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-                <version>${parent.version}</version>
+                <!--version>${parent.version}</version-->
             </plugin>
         </plugins>
     </build>

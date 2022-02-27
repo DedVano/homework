@@ -1,0 +1,69 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <changeSet author="Ivan Maltsev" id="Create-table-city">
+        <preConditions>
+            <not>
+                <tableExists tableName="CITY"/>
+            </not>
+        </preConditions>
+        <createTable tableName="CITY">
+            <column name="ID" type="BIGINT" autoIncrement="true">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="NAME_IN_RUSSIAN" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="NAME_IN_ENGLISH" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="POPULATION_SIZE" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet author="Ivan Maltsev" id="Create-table-phone-code">
+        <preConditions>
+            <not>
+                <tableExists tableName="PHONE_CODE"/>
+            </not>
+        </preConditions>
+        <createTable tableName="PHONE_CODE">
+            <column name="ID" type="BIGINT" autoIncrement="true">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="CODE" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="CITY_ID" type="BIGINT">
+                <constraints nullable="false" foreignKeyName="FK_PHONECODE_CITY"
+                             references="CITY(ID)"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet author="Ivan Maltsev" id="Create-table-region-code">
+        <preConditions>
+            <not>
+                <tableExists tableName="REGION_CODE"/>
+            </not>
+        </preConditions>
+        <createTable tableName="REGION_CODE">
+            <column name="ID" type="BIGINT" autoIncrement="true">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="CODE" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="CITY_ID" type="BIGINT">
+                <constraints nullable="false" foreignKeyName="FK_REGIONCODE_CITY"
+                             references="CITY(ID)"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+</databaseChangeLog>
