@@ -3,8 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <title>Конвертер валют</title>
+    <script src="/webjars/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/valute-converter.js"></script>
+    <link rel="stylesheet" href="/webjars/bootstrap/4.5.0/css/bootstrap.min.css" />
+    <link href="css/valute-converter.css" type="text/css" rel="stylesheet">
 </head>
-<body>
 
+<body class="card-body">
+    <div class="header">
+        Конвертер валют в рубли
+    </div>
+    <div>
+        <label for="valueToConvert">Введите сумму для конвертации </label>
+        <input id="valueToConvert" type="text" name="valueToConvert"/>
+    </div>
+    <div>
+        <label for="sourceValuteCode">Выберите валюту для конвертирования</label>
+        <select id="sourceValuteCode" type="text" name="sourceValuteCode">
+            <option selected disabled>Выберите код</option>
+        </select>
+    </div>
+    <div>
+        <button id="getRate">Получить курс</button>
+    </div>
+    <div>
+        <span id="receivedRate"></span>
+    </div>
+
+    <div class="wrongValueModal" id="wrongValue">
+        <p>Неправильно указано значение</p>
+        <p>Введите число, без текстовых символов, больше нуля.</p>
+        <p>Для отделения десятичной части используйте точку.</p>
+        <span id="wrongValueModalClose" class="modalClose close">ₓ</span>
+    </div>
+    <div class="wrongValueModal" id="wrongCode">
+        <p>Не выбрана ни одна валюта</p>
+        <p>Выберите нужную валюту из списка.</p>
+        <span id="wrongValuteCodeModalClose" class="modalClose close">ₓ</span>
+    </div>
+    <div id="overlay"></div>
 </body>
 </html>
