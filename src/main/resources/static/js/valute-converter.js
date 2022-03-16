@@ -76,7 +76,6 @@ $(function () {
         if (!valuteCode) {
             $('#sourceValuteCode').css("border-color", "red");
             errorMessageWrongValuteCode();
-            $('#receivedRate').text('');
         } else if (!value || !($.isNumeric(value) && value >= 0)) {
             $('#valueToConvert').css("border-color", "red");
             errorMessageWrongValue();

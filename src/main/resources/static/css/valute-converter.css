@@ -39,8 +39,8 @@
     height: 21px;
     position: absolute;
     font-size: 29px;
-    top: 1px;
-    right: 11px;
+    top: -20px;
+    right: 1px;
     cursor: pointer;
     display: block;
 }
