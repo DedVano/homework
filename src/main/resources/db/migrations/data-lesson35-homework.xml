@@ -1,0 +1,91 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <changeSet author="Ivan Maltsev" id="Fill-table-profession">
+        <preConditions>
+            <tableExists tableName="PROFESSION"/>
+        </preConditions>
+        <insert tableName="PROFESSION">
+            <column name="CODE" value="20040"/>
+            <column name="NAME" value="Агроном"/>
+        </insert>
+        <insert tableName="PROFESSION">
+            <column name="CODE" value="20101"/>
+            <column name="NAME" value="Артист балета"/>
+        </insert>
+        <insert tableName="PROFESSION">
+            <column name="CODE" value="20321"/>
+            <column name="NAME" value="Биолог"/>
+        </insert>
+        <insert tableName="PROFESSION">
+            <column name="CODE" value="20336"/>
+            <column name="NAME" value="Бухгалтер"/>
+        </insert>
+        <insert tableName="PROFESSION">
+            <column name="CODE" value="20448"/>
+            <column name="NAME" value="Врач"/>
+        </insert>
+        <insert tableName="PROFESSION">
+            <column name="CODE" value="20560"/>
+            <column name="NAME" value="Генеральный директор предприятия"/>
+        </insert>
+        <insert tableName="PROFESSION">
+            <column name="CODE" value="20580"/>
+            <column name="NAME" value="Генеральный секретарь"/>
+        </insert>
+        <insert tableName="PROFESSION">
+            <column name="CODE" value="20586"/>
+            <column name="NAME" value="Геодезист"/>
+        </insert>
+        <insert tableName="PROFESSION">
+            <column name="CODE" value="21975"/>
+            <column name="NAME" value="Заведующий канцелярией"/>
+        </insert>
+        <insert tableName="PROFESSION">
+            <column name="CODE" value="20743"/>
+            <column name="NAME" value="Главный дизайнер проекта"/>
+        </insert>
+        <insert tableName="PROFESSION">
+            <column name="CODE" value="21034"/>
+            <column name="NAME" value="Главный электрик"/>
+        </insert>
+        <insert tableName="PROFESSION">
+            <column name="CODE" value="23739"/>
+            <column name="NAME" value="Лоцман"/>
+        </insert>
+        <insert tableName="PROFESSION">
+            <column name="CODE" value="23050"/>
+            <column name="NAME" value="Инструктор"/>
+        </insert>
+        <insert tableName="PROFESSION">
+            <column name="CODE" value="23324"/>
+            <column name="NAME" value="Капитан"/>
+        </insert>
+        <insert tableName="PROFESSION">
+            <column name="CODE" value="22446"/>
+            <column name="NAME" value="Инженер"/>
+        </insert>
+        <insert tableName="PROFESSION">
+            <column name="CODE" value="21309"/>
+            <column name="NAME" value="Дилер"/>
+        </insert>
+        <insert tableName="PROFESSION">
+            <column name="CODE" value="21761"/>
+            <column name="NAME" value="Диспетчер связи"/>
+        </insert>
+        <insert tableName="PROFESSION">
+            <column name="CODE" value="22956"/>
+            <column name="NAME" value="Инспектор по кадрам"/>
+        </insert>
+        <insert tableName="PROFESSION">
+            <column name="CODE" value="25627"/>
+            <column name="NAME" value="Портье"/>
+        </insert>
+
+
+    </changeSet>
+
+</databaseChangeLog>

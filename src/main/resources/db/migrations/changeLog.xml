@@ -8,5 +8,7 @@
     <include file="data.xml" relativeToChangelogFile="true"/>
     <include file="schema-lesson30-homework.xml" relativeToChangelogFile="true"/>
     <include file="data-lesson30-homework.xml" relativeToChangelogFile="true"/>
+    <include file="schema-lesson35-homework.xml" relativeToChangelogFile="true"/>
+    <include file="data-lesson35-homework.xml" relativeToChangelogFile="true"/>
 
 </databaseChangeLog>
