@@ -10,6 +10,6 @@ public class StartPageController {
 
     @GetMapping
     public String index() {
-        return "redirect:/professions"; //"homework35/index";
+        return "redirect:/professions";
     }
 }
