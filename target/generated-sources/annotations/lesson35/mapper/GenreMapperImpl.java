@@ -7,8 +7,8 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2022-03-31T01:59:11+0300",
-    comments = "version: 1.3.1.Final, compiler: javac, environment: Java 17.0.1 (Oracle Corporation)"
+    date = "2022-04-07T12:07:44+0300",
+    comments = "version: 1.4.2.Final, compiler: javac, environment: Java 17.0.1 (Oracle Corporation)"
 )
 @Component
 public class GenreMapperImpl implements GenreMapper {
@@ -21,8 +21,8 @@ public class GenreMapperImpl implements GenreMapper {
 
         GenreDto genreDto = new GenreDto();
 
-        genreDto.setName( entity.getName() );
         genreDto.setCode( entity.getCode() );
+        genreDto.setName( entity.getName() );
 
         return genreDto;
     }
@@ -35,8 +35,8 @@ public class GenreMapperImpl implements GenreMapper {
 
         Genre genre = new Genre();
 
-        genre.setName( dto.getName() );
         genre.setCode( dto.getCode() );
+        genre.setName( dto.getName() );
 
         return genre;
     }
