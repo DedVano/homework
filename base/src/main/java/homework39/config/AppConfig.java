@@ -1,4 +1,4 @@
-package lesson39.homework.config;
+package homework39.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

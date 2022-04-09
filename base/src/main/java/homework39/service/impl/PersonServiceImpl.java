@@ -1,8 +1,8 @@
-package lesson39.homework.service.impl;
+package homework39.service.impl;
 
+import homework39.dao.PersonDao;
+import homework39.service.PersonService;
 import lesson18.dto.Person;
-import lesson39.homework.dao.PersonDao;
-import lesson39.homework.service.PersonService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

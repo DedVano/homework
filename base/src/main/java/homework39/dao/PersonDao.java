@@ -1,4 +1,4 @@
-package lesson39.homework.dao;
+package homework39.dao;
 
 import lesson18.dto.Person;
 

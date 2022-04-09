@@ -1,7 +1,7 @@
-package lesson39.homework.dao.impl;
+package homework39.dao.impl;
 
 import lesson18.dto.Person;
-import lesson39.homework.dao.PersonDao;
+import homework39.dao.PersonDao;
 import org.springframework.stereotype.Repository;
 
 @Repository

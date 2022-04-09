@@ -1,7 +1,7 @@
-package lesson39.homework;
+package homework39;
 
 import lesson18.dto.Person;
-import lesson39.homework.service.PersonService;
+import homework39.service.PersonService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

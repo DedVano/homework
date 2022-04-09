@@ -1,4 +1,4 @@
-package lesson39.homework.service;
+package homework39.service;
 
 import lesson18.dto.Person;
 

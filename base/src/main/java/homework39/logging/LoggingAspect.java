@@ -1,4 +1,4 @@
-package lesson39.homework.logging;
+package homework39.logging;
 
 import logger.dto.LoggingObjectDto;
 import lombok.RequiredArgsConstructor;
@@ -29,7 +29,7 @@ public class LoggingAspect {
     @Value("${spring.application.name}")
     private String applicationName;
 
-    @Before("execution(* lesson39.homework.dao.impl.PersonDaoImpl.*(..))")
+    @Before("execution(* homework39.dao.impl.PersonDaoImpl.*(..))")
     public void logBefore(JoinPoint joinPoint) {
         LoggingObjectDto loggingObjectDto = new LoggingObjectDto(
                 applicationName,
