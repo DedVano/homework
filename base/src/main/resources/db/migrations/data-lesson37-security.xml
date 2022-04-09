@@ -1,0 +1,30 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <changeSet author="Ivan Maltsev" id="Fill-tables-role-and-user">
+        <preConditions>
+            <tableExists tableName="ROLE"/>
+            <tableExists tableName="USER"/>
+        </preConditions>
+        <insert tableName="ROLE">
+            <column name="NAME" value="ADMIN" />
+        </insert>
+        <insert tableName="ROLE">
+            <column name="NAME" value="OPER" />
+        </insert>
+
+        <insert tableName="USER">
+            <column name="LOGIN" value="admin" />
+            <column name="PASSWORD" value="$2a$10$qGU93gHey5HYfRSLzefs7e8W/akvRHNWUzpGFFZKpMU1T8IajHAay" />
+            <column name="ROLE_ID" valueComputed="(SELECT ID FROM ROLE WHERE NAME = 'ADMIN')" />
+        </insert>
+        <insert tableName="USER">
+            <column name="LOGIN" value="oper" />
+            <column name="PASSWORD" value="$2a$10$dxNqo6H1OFLFoYjrb3nPse8w4E/dyIng91CWxmEf1CUJBOV.KZkuq" />
+            <column name="ROLE_ID" valueComputed="(SELECT ID FROM ROLE WHERE NAME = 'OPER')" />
+        </insert>
+    </changeSet>
+</databaseChangeLog>

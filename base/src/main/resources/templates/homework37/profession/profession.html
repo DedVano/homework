@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title th:text="#{profs.addEdit}">Add/Edit</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}" href="/css/style.css"/>
+</head>
+<body>
+<div class="row">
+    <a th:href="@{/professions}" th:title="#{profs.titleBack}" href="professions.html"><img alt="Back" th:src="@{/images/prof_back.png}"/></a>
+</div>
+<form id="add-form" th:action="@{/profession/save}" th:if="${profession == null}" method="post" action="profession.html">
+    <p><strong th:text="#{profs.titleAddNew}">Add new profession:</strong></p>
+
+    <div class="row">
+        <label for="code-input" th:text="#{profs.code}">Code:</label>
+        <input id="code-input" name="code" type="text" required="required" minlength="5" maxlength="5"/>
+    </div>
+
+    <div class="row">
+        <label for="name-input" th:text="#{profs.name}">Name:</label>
+        <input id="name-input" name="name" type="text" required="required" maxlength="120" />
+    </div>
+
+    <div class="row">
+        <button type="submit" th:title="#{profs.titleSave}"><img alt="Save" th:src="@{/images/prof_save.png}"/></button>
+    </div>
+</form>
+<form id="edit-form" th:action="@{/profession/save(code=${profession.code})}" th:unless="${profession == null}" method="post"
+      action="profession.html">
+    <p><strong th:text="#{profs.titleEdit}">profession Info:</strong></p>
+
+    <div class="row">
+        <label for="code-input" th:text="#{profs.code}">Code:</label>
+        <input id="code-input" type="text" th:value="${profession.code}" readonly="readonly" value="10000"/>
+    </div>
+
+    <div class="row">
+        <label for="name-input" th:text="#{profs.name}">Name:</label>
+        <input id="name-input" name="name" type="text" th:value="${profession.name}" required="required" maxlength="120" value="Name"/>
+    </div>
+
+    <div class="row">
+        <button type="submit" th:title="#{profs.titleSave}"><img alt="Save" th:src="@{/images/prof_save.png}"/></button>
+    </div>
+</form>
+</body>
+</html>

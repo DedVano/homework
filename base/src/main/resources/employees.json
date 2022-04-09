@@ -1,0 +1,145 @@
+{"Employees": {"Employee": [
+    {
+        "name": "Веселов Максим Павлович",
+        "id": "5b-4524",
+        "position": {
+            "positionName": "Руководитель отдела продаж",
+            "salary": 270000
+        },
+        "login": "veselov",
+        "department": {
+            "departmentName": "Отдел продаж",
+            "city": "Москва"
+        }
+    },
+    {
+        "name": "Киселев Никита Тимофеевич",
+        "id": "5b-4528",
+        "position": {
+            "positionName": "Заместитель руководителя отдела продаж",
+            "salary": 130000
+        },
+        "login": "kiselev",
+        "department": {
+            "departmentName": "Отдел продаж",
+            "city": "Москва"
+        }
+    },
+    {
+        "name": "Мельников Павел Дмитриевич",
+        "id": "5b-4532",
+        "position": {
+            "positionName": "Менеджер отдела продаж",
+            "salary": 90000
+        },
+        "login": "melnikov",
+        "department": {
+            "departmentName": "Отдел продаж",
+            "city": "Москва"
+        }
+    },
+    {
+        "name": "Третьяков Максим Ярославович",
+        "id": "5b-4533",
+        "position": {
+            "positionName": "Менеджер отдела продаж",
+            "salary": 90000
+        },
+        "login": "tretyakov",
+        "department": {
+            "departmentName": "Отдел продаж",
+            "city": "Москва"
+        }
+    },
+    {
+        "name": "Климов Николай Владимирович",
+        "id": "5b-4538",
+        "position": {
+            "positionName": "Менеджер отдела продаж",
+            "salary": 90000
+        },
+        "login": "klimov",
+        "department": {
+            "departmentName": "Отдел продаж",
+            "city": "Москва"
+        }
+    },
+    {
+        "name": "Авдеев Роберт Васильевич",
+        "id": "5b-4540",
+        "position": {
+            "positionName": "Менеджер отдела продаж",
+            "salary": 90000
+        },
+        "login": "avdeev",
+        "department": {
+            "departmentName": "Отдел продаж",
+            "city": "Москва"
+        }
+    },
+    {
+        "name": "Жуков Арсений Елисеевич",
+        "id": "7d-2132",
+        "position": {
+            "positionName": "Руководитель отдела ИТ",
+            "salary": 150000
+        },
+        "login": "zhukov",
+        "department": {
+            "departmentName": "Отдел ИТ",
+            "city": "Москва"
+        }
+    },
+    {
+        "name": "Рогов Максим Даниилович",
+        "id": "7d-2143",
+        "position": {
+            "positionName": "Системный администратор",
+            "salary": 80000
+        },
+        "login": "rogov",
+        "department": {
+            "departmentName": "Отдел ИТ",
+            "city": "Москва"
+        }
+    },
+    {
+        "name": "Чернов Эмиль Вадимович",
+        "id": "7d-2147",
+        "position": {
+            "positionName": "Программист",
+            "salary": 115000
+        },
+        "login": "chernov",
+        "department": {
+            "departmentName": "Отдел ИТ",
+            "city": "Москва"
+        }
+    },
+    {
+        "name": "Лобанов Демид Давидович",
+        "id": "7d-2149",
+        "position": {
+            "positionName": "Программист",
+            "salary": 115000
+        },
+        "login": "lobanov",
+        "department": {
+            "departmentName": "Отдел ИТ",
+            "city": "Москва"
+        }
+    },
+    {
+        "name": "Коротков Тимофей Артурович",
+        "id": "2v-1290",
+        "position": {
+            "positionName": "Уборщик",
+            "salary": 50000
+        },
+        "login": "korotkov",
+        "department": {
+            "departmentName": "Служба клининга",
+            "city": "Москва"
+        }
+    }
+]}}

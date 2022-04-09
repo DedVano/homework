@@ -1,0 +1,7 @@
+server:
+  port: 8090   # default 8080
+
+spring:
+
+  application:
+    name: dedvano-app-logger

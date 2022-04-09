@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Employees>
+    <Employee>
+        <id>5b-4524</id>
+        <login>veselov</login>
+        <name>Веселов Максим Павлович</name>
+        <department>
+            <departmentName>Отдел продаж</departmentName>
+            <city>Москва</city>
+        </department>
+        <position>
+            <positionName>Руководитель отдела продаж</positionName>
+            <salary>270000</salary>
+        </position>
+    </Employee>
+    <Employee>
+        <id>5b-4528</id>
+        <login>kiselev</login>
+        <name>Киселев Никита Тимофеевич</name>
+        <department>
+            <departmentName>Отдел продаж</departmentName>
+            <city>Москва</city>
+        </department>
+        <position>
+            <positionName>Заместитель руководителя отдела продаж</positionName>
+            <salary>130000</salary>
+        </position>
+    </Employee>
+    <Employee>
+        <id>5b-4532</id>
+        <login>melnikov</login>
+        <name>Мельников Павел Дмитриевич</name>
+        <department>
+            <departmentName>Отдел продаж</departmentName>
+            <city>Москва</city>
+        </department>
+        <position>
+            <positionName>Менеджер отдела продаж</positionName>
+            <salary>90000</salary>
+        </position>
+    </Employee>
+    <Employee>
+        <id>5b-4533</id>
+        <login>tretyakov</login>
+        <name>Третьяков Максим Ярославович</name>
+        <department>
+            <departmentName>Отдел продаж</departmentName>
+            <city>Москва</city>
+        </department>
+        <position>
+            <positionName>Менеджер отдела продаж</positionName>
+            <salary>90000</salary>
+        </position>
+    </Employee>
+    <Employee>
+        <id>5b-4538</id>
+        <login>klimov</login>
+        <name>Климов Николай Владимирович</name>
+        <department>
+            <departmentName>Отдел продаж</departmentName>
+            <city>Москва</city>
+        </department>
+        <position>
+            <positionName>Менеджер отдела продаж</positionName>
+            <salary>90000</salary>
+        </position>
+    </Employee>
+    <Employee>
+        <id>5b-4540</id>
+        <login>avdeev</login>
+        <name>Авдеев Роберт Васильевич</name>
+        <department>
+            <departmentName>Отдел продаж</departmentName>
+            <city>Москва</city>
+        </department>
+        <position>
+            <positionName>Менеджер отдела продаж</positionName>
+            <salary>90000</salary>
+        </position>
+    </Employee>
+    <Employee>
+        <id>7d-2132</id>
+        <login>zhukov</login>
+        <name>Жуков Арсений Елисеевич</name>
+        <department>
+            <departmentName>Отдел ИТ</departmentName>
+            <city>Москва</city>
+        </department>
+        <position>
+            <positionName>Руководитель отдела ИТ</positionName>
+            <salary>150000</salary>
+        </position>
+    </Employee>
+    <Employee>
+        <id>7d-2143</id>
+        <login>rogov</login>
+        <name>Рогов Максим Даниилович</name>
+        <department>
+            <departmentName>Отдел ИТ</departmentName>
+            <city>Москва</city>
+        </department>
+        <position>
+            <positionName>Системный администратор</positionName>
+            <salary>80000</salary>
+        </position>
+    </Employee>
+    <Employee>
+        <id>7d-2147</id>
+        <login>chernov</login>
+        <name>Чернов Эмиль Вадимович</name>
+        <department>
+            <departmentName>Отдел ИТ</departmentName>
+            <city>Москва</city>
+        </department>
+        <position>
+            <positionName>Программист</positionName>
+            <salary>115000</salary>
+        </position>
+    </Employee>
+    <Employee>
+        <id>7d-2149</id>
+        <login>lobanov</login>
+        <name>Лобанов Демид Давидович</name>
+        <department>
+            <departmentName>Отдел ИТ</departmentName>
+            <city>Москва</city>
+        </department>
+        <position>
+            <positionName>Программист</positionName>
+            <salary>115000</salary>
+        </position>
+    </Employee>
+    <Employee>
+        <id>2v-1290</id>
+        <login>korotkov</login>
+        <name>Коротков Тимофей Артурович</name>
+        <department>
+            <departmentName>Служба клининга</departmentName>
+            <city>Москва</city>
+        </department>
+        <position>
+            <positionName>Уборщик</positionName>
+            <salary>50000</salary>
+        </position>
+    </Employee>
+</Employees>

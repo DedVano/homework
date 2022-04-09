@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+      xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8"/>
+    <title th:text="#{profs.listOfProfessions}">List of all professions</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}" href="css/style.css">
+    <script src="webjars/jquery/3.3.1/jquery.min.js"></script>
+    <script th:src="@{/js/professions37.js}" src="js/professions37.js"></script>
+</head>
+<body>
+<div class="loginAndLocalePanel">
+    <div sec:authorize="isAuthenticated()">
+        <span class="loginName" sec:authentication="name"></span>
+        <div class="logoutButton">
+          <a th:href="@{/logout}"><img th:title="#{profs.logout}" title="Logout" th:src="@{/images/prof_exit.png}"/></a>
+        </div>
+    </div>
+    <div class="changeLocale" th:switch="${#locale.getLanguage().toString().toLowerCase()}">
+        <a th:case="ru" th:text="English" th:href="@{/professions?lang=en}" href="professions.html"></a>
+        <a th:case="en" th:text="Русский" th:href="@{/professions?lang=ru}" href="professions.html"></a>
+    </div>
+</div>
+<p><strong th:text="#{profs.title}">Professions:</strong></p>
+<div>
+    <a th:if="${professions.hasPrevious}" th:href="@{/professions(page=${professions.currentPage-1})}" href="professions.html" th:title="#{profs.titlePrevPage}">
+        <img alt="Previous page" th:src="@{/images/prof_prev.png}"/></a>
+    <span th:text="#{profs.currentPage}">Current page</span>
+    <span th:text="${professions.currentPage + 1}">1</span>
+    <span th:text="#{profs.of}"> of </span>
+    <span th:text="${professions.totalPages}">2</span>
+    <a th:if="${professions.hasNext}" th:href="@{/professions(page=${professions.currentPage + 1})}" href="professions.html" th:title="#{profs.titleNextPage}">
+        <img alt="Next page" th:src="@{/images/prof_next.png}"/></a>
+</div>
+<table>
+    <thead>
+    <tr>
+        <th th:text="#{profs.code}">Code</th>
+        <th th:text="#{profs.name}">Name</th>
+        <th th:text="#{profs.actions}">Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="profession: ${professions.professionsList}">
+        <td th:text="${profession.code}">ItemCode</td>
+        <td th:text="${profession.name}">ItemName</td>
+        <td sec:authorize="hasRole('ADMIN')">
+            <a th:href="@{/profession/edit(code=${profession.code})}" href="professions.html" th:title="#{profs.titleEdit}"><img alt="Edit"
+                                                                                   th:src="@{/images/prof_edit.png}"/></a>
+            <a id="delete-handler" th:id="${profession.codeForDeleteLink}" th:name="${profession.codeForDeleteLink}" th:title="#{profs.titleDelete}"
+               th:attr="data-confirm-text=#{profs.areYouSureToDelete}" href="professions.html">
+                <img alt="Delete" th:src="@{/images/prof_delete.png}"/></a>
+        </td>
+        <td sec:authorize="!hasRole('ADMIN')">
+            <img th:title="#{profs.notAvailable}" alt="Dont have rights" th:src="@{/images/prof_edit_disabled.png}"/>
+            <img th:title="#{profs.notAvailable}" alt="Dont have rights"  th:src="@{/images/prof_delete_disabled.png}"/>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<div>
+    <a sec:authorize="hasRole('ADMIN')" th:href="@{/profession/add}" href="profession.html" th:title="#{profs.titleAddNew}"><img alt="Add" th:src="@{/images/prof_add.png}"/></a>
+    <img sec:authorize="!hasRole('ADMIN')" th:title="#{profs.notAvailable}" alt="Dont have rights" th:src="@{/images/prof_add_disabled.png}"/>
+</div>
+</body>
+</html>

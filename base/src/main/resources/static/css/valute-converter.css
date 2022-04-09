@@ -1,0 +1,58 @@
+.header {
+    font-size: large;
+    font-weight: bold;
+    color: hotpink;
+}
+
+#valueToConvert {
+    width: 100px;
+}
+
+#sourceValuteCode {
+    width: 130px;
+}
+
+.wrongValueModal {
+    width: 298px;
+    height: 195px;
+    padding: 18px 9px;
+    border-radius: 4px;
+    background: #fafafa;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    display: none;
+    opacity: 0;
+    z-index: 38;
+    text-align: center;
+}
+
+#wrongCode {
+    height: 105px;
+}
+
+.wrongValueModal .modalClose {
+    width: 21px;
+    height: 21px;
+    position: absolute;
+    font-size: 29px;
+    top: -20px;
+    right: 1px;
+    cursor: pointer;
+    display: block;
+}
+
+#overlay {
+    z-index: 37;
+    position: fixed;
+    background: rgba(0, 0, 0, .7);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+    display: none;
+}
