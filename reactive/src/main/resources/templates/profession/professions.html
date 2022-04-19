@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title th:text="#{profs.listOfProfessions}">List of all professions</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}" href="css/style.css">
+    <script src="webjars/jquery/3.3.1/jquery.min.js"></script>
+    <script th:src="@{/js/professions.js}" src="js/professions.js"></script>
+</head>
+<body>
+<div th:switch="${#locale.getLanguage().toString().toLowerCase()}">
+    <a th:case="ru" th:text="English" th:href="@{/professions?lang=en}" href="professions.html"></a>
+    <a th:case="en" th:text="Русский" th:href="@{/professions?lang=ru}" href="professions.html"></a>
+</div>
+<p><strong th:text="#{profs.title}">Professions:</strong></p>
+
+<table>
+    <thead>
+    <tr>
+        <th th:text="#{profs.code}">Code</th>
+        <th th:text="#{profs.name}">Name</th>
+        <th th:text="#{profs.actions}">Actions</th>
+    </tr>
+    </thead>
+    <tbody id="profData"/>
+</table>
+<div>
+    <a th:href="@{/profession/add(lang=${#locale.getLanguage().toString().toLowerCase()})}" href="profession.html" th:title="#{profs.titleAddNew}">
+        <img alt="Add" th:src="@{/images/prof_add.png}"/></a>
+</div>
+<span id="localizedMessages" type="hidden"
+      th:attr="data-confirm-text=#{profs.areYouSureToDelete}, data-edit=#{profs.titleEdit}, data-delete=#{profs.titleDelete},
+            data-lang=${#locale.getLanguage().toString().toLowerCase()}"></span>
+</body>
+</html>

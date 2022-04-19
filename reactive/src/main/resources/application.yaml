@@ -1,0 +1,18 @@
+spring:
+  main:
+    banner-mode: 'off'
+  application:
+    name: library
+  data:
+    mongodb:
+      database: library
+      port: 27017
+      host: localhost
+
+server:
+  port: 9090
+
+mongock:
+  runner-type: "ApplicationRunner"
+  change-logs-scan-package:
+    - homework41.migration
