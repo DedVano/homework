@@ -1,0 +1,45 @@
+#labelText {
+    float: left;
+}
+
+.body {
+    margin: 0px 0px 0px 0px; /* up right down left */
+    margin-bottom: 2px;
+}
+
+body {
+    color: green;  /*!important;*/
+}
+
+.holder {
+    height: 100px;
+    width: 200px;
+    background: red;
+}
+
+#labelText:read-only {
+    float: left;
+}
+
+#errorLabel {
+    display: none;
+}
+
+.loginAndLocalePanel {
+    position: absolute;
+    right: 5px;
+}
+
+.loginName {
+    padding-right: 5px;
+}
+
+.logoutButton {
+    float: right;
+    cursor: pointer;
+}
+
+.changeLocale {
+    position: relative;
+    top: 20px;
+}

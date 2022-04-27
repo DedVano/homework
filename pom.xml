@@ -10,6 +10,7 @@
     <modules>
         <module>base</module>
         <module>loggingFromRest</module>
+        <module>spring-data-rest-and-actuator</module>
     </modules>
     <packaging>pom</packaging>
 
