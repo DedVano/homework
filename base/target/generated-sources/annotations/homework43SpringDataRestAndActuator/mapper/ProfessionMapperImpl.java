@@ -1,13 +1,13 @@
-package homework37.mapper;
+package homework43SpringDataRestAndActuator.mapper;
 
-import homework37.dto.ProfessionDto;
-import homework37.model.Profession;
+import homework43SpringDataRestAndActuator.dto.ProfessionDto;
+import homework43SpringDataRestAndActuator.model.Profession;
 import javax.annotation.processing.Generated;
 import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2022-08-31T00:24:26+0300",
+    date = "2022-08-31T00:24:25+0300",
     comments = "version: 1.4.2.Final, compiler: javac, environment: Java 17.0.1 (Oracle Corporation)"
 )
 @Component
